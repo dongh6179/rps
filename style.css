@@ -26,7 +26,7 @@ body{
     width: 100%;
     padding: 25px 0;
     text-align: center;
-    background-color: lightblue;
+    background-color: rgb(26, 163, 208);
     margin-top: 5px;
 }
 
@@ -34,5 +34,12 @@ body{
     padding: 25px 0;
     visibility: hidden;
     margin-top: 5px;
-    background-color: rgb(211, 235, 244);
+    background-color: rgb(110, 216, 254);
+}
+
+#outcome{
+    padding: 25px 0;
+    visibility: hidden;
+    margin-top: 5px;
+    background-color: rgb(180, 235, 255);
 }

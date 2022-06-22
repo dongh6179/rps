@@ -23,10 +23,16 @@
         <br>To play Rock, press r
         <br>To play Paper, press p
         <br>To play Scissors, press s
+        <br>You will be fighting an AI.
     </div>
 
     <div id = "game">
-        Hi
+        Lets begin the game!!!
+        <br>Enter your choice of rock, paper, or scissors.
+    </div>
+
+    <div id = "outcome">
+        You got a draw!
     </div>
 
     <h2>You typed <span id="user-text"><strong>...Nothing.</strong></span></h2>
@@ -41,18 +47,54 @@
             }
         }
 
+        var computer = ["r", "p", "s"];
+        var computerChoice = computer[Math.floor(Math.random()*3)];
+        console.log(computerChoice);
+
         var input = document.getElementById("user-text");
         var choice;
+        var counter = false;
+        var b;
 
         document.onkeyup = function (event) {
+            var x = document.getElementById("game");
             input.textContent = event.key;
             choice = event.key;
-            if (choice.toLowerCase() == 'o') {
-                var x = document.getElementById("game");
+            if (choice.toLowerCase() == "o") {
                 x.style.visibility = "visible";
+                console.log(computerChoice);
+            }
+
+            for(var i = 0; counter != true; i++){
+                gamePlay();
+                if(b){
+                    break;
+                }
             }
         };
 
+        function gamePlay(){
+            var outcome = document.getElementById("outcome");
+            if (document.getElementById("game").style.visibility == "visible") {
+                if (choice == computerChoice) {
+                    outcome.style.visibility = "visible";
+                }
+                else if ((choice == "p" && computerChoice == "r") || (choice == "s" && computerChoice == "p") || (choice == "r" && computerChoice == "s")) {
+                    outcome.textContent = "You won!";
+                    outcome.style.visibility = "visible";
+                }
+                else if ((choice == "r" && computerChoice == "p") || (choice == "p" && computerChoice == "s") || (choice == "s" && computerChoice == "r")) {
+                    outcome.textContent = "You lost ;(";
+                    outcome.style.visibility = "visible";
+                }
+            }
+            if(outcome.style.visibility == "visible"){
+                counter = confirm("Play Again?")
+            }
+            if(!counter){
+                b = true;
+            }
+        }
         
     </script>
 
