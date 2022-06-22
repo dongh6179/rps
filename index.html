@@ -35,8 +35,6 @@
         You got a draw!
     </div>
 
-    <h2>You typed <span id="user-text"><strong>...Nothing.</strong></span></h2>
-
     <script>
         function displayTutorial() {
             var x = document.getElementById("tutorial");
@@ -49,7 +47,6 @@
 
         var computer = ["r", "p", "s"];
         var computerChoice = computer[Math.floor(Math.random()*3)];
-        console.log(computerChoice);
 
         var input = document.getElementById("user-text");
         var choice;
@@ -58,11 +55,9 @@
 
         document.onkeyup = function (event) {
             var x = document.getElementById("game");
-            input.textContent = event.key;
             choice = event.key;
             if (choice.toLowerCase() == "o") {
                 x.style.visibility = "visible";
-                console.log(computerChoice);
             }
 
             for(var i = 0; counter != true; i++){
