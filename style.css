@@ -20,6 +20,8 @@ body{
     margin-right: auto;
     text-align: center;
     background-color:rgb(212, 249, 255);
+    font-size:18px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #tutorial {
