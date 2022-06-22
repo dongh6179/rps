@@ -105,6 +105,10 @@
             outcome.textContent = "";
             choiceRandom();
             gamePlay();
+            wins = 0;
+            draws = 0;
+            losses = 0;
+            document.getElementById("score").textContent = "Wins: " + wins + "  Losses: " + losses + " Draws: " + draws;
         }
         
     </script>
