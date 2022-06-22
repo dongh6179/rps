@@ -15,6 +15,7 @@
 <body>
 
     <h1>Rock Paper Scissors</h1>
+    <h2>To start the game press o.</h2>
     <h4 id = "score">Wins: 0  Losses: 0  Draws: 0</h4>
 
     <button id = "tutorialButton" class="button" onclick="displayTutorial()">Hide Tutorial</button>
@@ -23,7 +24,6 @@
         Rock: wins against scissors, loses to paper, and ties against itself.
         <br>Paper: wins against rock, loses to scissors, and ties against itself.
         <br>Scissors: wins against paper, loses to rock, and ties against itself.
-        <br>To start the game press o.
         <br>To play Rock, press r
         <br>To play Paper, press p
         <br>To play Scissors, press s
@@ -65,10 +65,11 @@
         }
         choiceRandom();
 
+        document.getElementById("hide").style.visibility = "visible";
 
         document.onkeyup = function (event) {
             var x = document.getElementById("game");
-            choice = event.key;
+            choice = event.key.toLowerCase();
             if (choice.toLowerCase() == "o") {
                 x.style.visibility = "visible";
             }
@@ -77,6 +78,7 @@
         
         function gamePlay(){
             outcome.textContent = " ";
+            choiceRandom();
             if (document.getElementById("game").style.visibility == "visible") {
                 if (choice == computerChoice) {
                     outcome.style.visibility = "visible";
@@ -94,8 +96,8 @@
                     losses++;
                 }
             }
-            document.getElementById("hide").style.visibility = "visible";
             document.getElementById("score").textContent = "Wins: " + wins + "  Losses: " + losses + " Draws: " + draws;
+            choice = "";
         }
 
         function playAgain(){
