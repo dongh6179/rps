@@ -14,7 +14,7 @@
     <h1>Rock Paper Scissors</h1>
     <h4 id = "score">Wins: 0  Losses: 0  Draws: 0</h4>
 
-    <button class="button" onclick="displayTutorial()">Click for Tutorial</button>
+    <button id = "tutorialButton" class="button" onclick="displayTutorial()">Hide Tutorial</button>
 
     <div id="tutorial">
         Rock: wins against scissors, loses to paper, and ties against itself.
@@ -41,10 +41,13 @@
     <script>
         function displayTutorial() {
             var x = document.getElementById("tutorial");
+            var y = document.getElementById("tutorialButton");
             if (x.style.display === "none") {
                 x.style.display = "block";
+                y.textContent = "Hide Tutorial";
             } else {
                 x.style.display = "none";
+                y.textContent = "Show Tutorial";
             }
         }
 
