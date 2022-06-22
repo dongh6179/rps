@@ -1,30 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rps</title>
     <link rel="stylesheet" href="style.css">
+    <title>rps</title>
 </head>
+
 <body>
 
     <h1>Rock Paper Scissors</h1>
 
     <button class="button" onclick="displayTutorial()">Click for Tutorial</button>
-    <div id = "tutorial">
-        Tutorial
+
+    <div id="tutorial">
+        Rock: wins against scissors, loses to paper, and ties against itself.
+        <br>Paper: wins against rock, loses to scissors, and ties against itself.
+        <br>Scissors: wins against paper, loses to rock, and ties against itself.
+        <br>To start the game press o.
+        <br>To play Rock, press r
+        <br>To play Paper, press p
+        <br>To play Scissors, press s
     </div>
 
+    <div id = "game">
+        Hi
+    </div>
+
+    <h2>You typed <span id="user-text"><strong>...Nothing.</strong></span></h2>
+
     <script>
-        function displayTutorial(){
-            var tutorial = document.getElementByID("tutorial");
-            if (tutorial.style.display === "none") {
-                tutorial.style.display = "block";
+        function displayTutorial() {
+            var x = document.getElementById("tutorial");
+            if (x.style.display === "none") {
+                x.style.display = "block";
             } else {
-                tutorial.style.display = "none";
+                x.style.display = "none";
             }
         }
+
+        var input = document.getElementById("user-text");
+        var choice;
+
+        document.onkeyup = function (event) {
+            input.textContent = event.key;
+            choice = event.key;
+            console.log(choice);
+        };
+
+        if(choice.toLowerCase() == "o"){
+            var x = document.getElementById("game");
+            x.style.display = "block";
+        }
     </script>
+
 </body>
+
 </html>
