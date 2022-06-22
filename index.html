@@ -47,13 +47,13 @@
         document.onkeyup = function (event) {
             input.textContent = event.key;
             choice = event.key;
-            console.log(choice);
+            if (choice.toLowerCase() == 'o') {
+                var x = document.getElementById("game");
+                x.style.visibility = "visible";
+            }
         };
 
-        if(choice.toLowerCase() == "o"){
-            var x = document.getElementById("game");
-            x.style.display = "block";
-        }
+        
     </script>
 
 </body>

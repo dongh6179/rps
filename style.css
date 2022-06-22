@@ -31,5 +31,8 @@ body{
 }
 
 #game{
-    display: none;
+    padding: 25px 0;
+    visibility: hidden;
+    margin-top: 5px;
+    background-color: rgb(211, 235, 244);
 }
