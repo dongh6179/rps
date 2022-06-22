@@ -11,10 +11,20 @@
 
     <h1>Rock Paper Scissors</h1>
 
-    <button class="button">Click for Tutorial</button>
+    <button class="button" onclick="displayTutorial()">Click for Tutorial</button>
+    <div id = "tutorial">
+        Tutorial
+    </div>
 
     <script>
-
+        function displayTutorial(){
+            var tutorial = document.getElementByID("tutorial");
+            if (tutorial.style.display === "none") {
+                tutorial.style.display = "block";
+            } else {
+                tutorial.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
