@@ -59,13 +59,7 @@
             if (choice.toLowerCase() == "o") {
                 x.style.visibility = "visible";
             }
-
-            for(var i = 0; counter != true; i++){
-                gamePlay();
-                if(b){
-                    break;
-                }
-            }
+            gamePlay();
         };
 
         function gamePlay(){
@@ -83,12 +77,7 @@
                     outcome.style.visibility = "visible";
                 }
             }
-            if(outcome.style.visibility == "visible"){
-                counter = confirm("Play Again?")
-            }
-            if(!counter){
-                b = true;
-            }
+            
         }
         
     </script>
